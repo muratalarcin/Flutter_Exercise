@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterexam/ui/button_design.dart';
+import 'package:flutterexam/ui/deneme.dart';
 import 'package:flutterexam/ui/list_page.dart';
 
 void main() {
@@ -13,11 +15,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        appBarTheme: const AppBarTheme(
+          centerTitle: true,
+          elevation: 0,
+          titleTextStyle: TextStyle(
+            color: Colors.amber,
+          ),
+          backgroundColor: Colors.transparent,
+        ),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
       ),
-      home: const ListPage(),
+      home: const Deneme(),
     );
   }
 }
